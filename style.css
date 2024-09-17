@@ -1,13 +1,25 @@
-body{
-  background-image: url(lisa.png);
+/* styles.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 700px;
-  height: 700px;
-  background-repeat: no-repeat;
+  background-color: #f0f0f0; /* Cor de fundo para melhor visualização */
 }
 
-a{
-  justify-content: center;
-  align-items: center;
+.container {
+  position: relative;
+}
+
+.image-link {
+  display: block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: none; /* Remove qualquer borda padrão do link */
 }
