@@ -1,1 +1,67 @@
-<h2>cu</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer de 30 Segundos</title>
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-image: url(1000_F_458304939_ejmvvxTlCFU7Ldy.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }   
+        .timer {
+            font-size: 48px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="timer" id="timer">30</div>
+    <button class="button" id="startButton">Iniciar Timer</button>
+    <script>
+        let timeLeft = 30;
+        let timerId;
+
+        const timerDisplay = document.getElementById('timer');
+        const startButton = document.getElementById('startButton');
+
+        startButton.addEventListener('click', () => {
+            clearInterval(timerId);
+            timeLeft = 30;
+            timerDisplay.textContent = timeLeft;
+
+            timerId = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerId);
+                    alert('Tempo esgotado!');
+                }
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>
